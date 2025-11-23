@@ -25,7 +25,7 @@
 		"geoip2/geoip2": "^3.2",
 		"jenssegers/agent": "^2.6",
 		"torann/geoip": "^3.0",
-		"vicky-project/viewmanager-module": "dev-main"
+		"vicky-project/viewmanager-module": "*"
 	},
 	"autoload": {
 		"psr-4": {
