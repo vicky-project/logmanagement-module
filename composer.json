@@ -1,5 +1,5 @@
 {
-	"name": "vicky-project/logmanagement",
+	"name": "vicky-project/logmanagement-module",
 	"type": "laravel-module",
 	"description": "Log manangement module that contain apps log (laravel log), user activity log, and authenticate log. Build on top package nwidart/laravel-modules",
 	"version": "1.0.0",
