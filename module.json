@@ -1,0 +1,11 @@
+{
+    "name": "LogManagement",
+    "alias": "logmanagement",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\LogManagement\\Providers\\LogManagementServiceProvider"
+    ],
+    "files": []
+}

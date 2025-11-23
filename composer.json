@@ -1,0 +1,41 @@
+{
+	"name": "vicky-project/logmanagement",
+	"type": "laravel-module",
+	"description": "",
+	"authors": [
+		{
+			"name": "Vicky Rahman",
+			"email": "pratamavr@gmail.com"
+		}
+	],
+	"extra": {
+		"laravel": {
+			"providers": [],
+			"aliases": {}
+		}
+	},
+	"require": {
+		"php": "^8.2",
+		"laravel/framework": "^12.0",
+		"nwidart/laravel-modules": "*",
+		"joshbrw/laravel-module-installer": "^1.0",
+		"spatie/laravel-activitylog": "^4.10",
+		"opcodesio/log-viewer": "^3.21",
+		"rappasoft/laravel-authentication-log": "^5.0",
+		"geoip2/geoip2": "^3.2",
+		"jenssegers/agent": "^2.6",
+		"torann/geoip": "^3.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Modules\\LogManagement\\": "app/",
+			"Modules\\LogManagement\\Database\\Factories\\": "database/factories/",
+			"Modules\\LogManagement\\Database\\Seeders\\": "database/seeders/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Modules\\LogManagement\\Tests\\": "tests/"
+		}
+	}
+}
