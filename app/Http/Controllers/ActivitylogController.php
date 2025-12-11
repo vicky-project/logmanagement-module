@@ -2,7 +2,7 @@
 
 namespace Modules\LogManagement\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Modules\LogManagement\Services\FilterRequestLog;
 use Modules\LogManagement\Services\ActivityLogService;
