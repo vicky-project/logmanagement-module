@@ -25,7 +25,7 @@ class MenuProvider implements MenuProviderInterface
 						"id" => "activity-log",
 						"name" => "Activity Log",
 						"route" => "logmanagement.activitylog",
-						"icon" => "bike",
+						"icon" => "user-clock",
 						"order" => 1,
 						"role" => ["admin"],
 						"permission" => Permissions::VIEW_ACTIVITYLOG,
