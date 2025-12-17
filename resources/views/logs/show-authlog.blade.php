@@ -1,4 +1,8 @@
-@extends('viewmanager::layouts.app')
+@if(Module::has('ViewManager') && Module::isEnabled('ViewManager'))
+  @extends('viewmanager::layouts.app')
+@else
+  @extends('menumanagement::layouts.app')
+@endif
 
 @use('Modules\LogManagement\Constants\Permissions')
 
