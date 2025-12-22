@@ -262,11 +262,11 @@ class ActivityLog extends Activity
 	public function getColorAttribute(): string
 	{
 		return match ($this->event) {
-			"created" => "green",
-			"updated" => "blue",
-			"deleted" => "red",
-			"restored" => "yellow",
-			default => "gray",
+			"created" => "success",
+			"updated" => "primary",
+			"deleted" => "danger",
+			"restored" => "warning",
+			default => "secondary",
 		};
 	}
 }
