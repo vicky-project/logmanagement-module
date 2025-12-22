@@ -1,10 +1,10 @@
-@if(Module::has('ViewManager') && Module::isEnabled('ViewManager'))
-  @extends('viewmanager::layouts.app')
+@if(Module::has('Core') && Module::isEnabled('Core'))
+  @extends('core::layouts.app')
 @else
-  @extends('menumanagement::layouts.app')
+  @extends('logmanagement::layouts.app')
 @endif
 
-@section('page-title', 'Activity Log')
+@section('title', 'Activity Log')
 
 @section('content')
 <div class="row">
@@ -70,9 +70,7 @@
           </div>
           <div class="row pt-2 border-top border-info">
             <button type="submit" class="btn btn-success btn-block">
-              <svg class="icon me-2">
-                <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-filter') }}"></use>
-              </svg>
+              <i class="fas fa-fw fa-filter"></i>
               Apply Filters
             </button>
           </div>

@@ -1,12 +1,12 @@
-@if(Module::has('ViewManager') && Module::isEnabled('ViewManager'))
-  @extends('viewmanager::layouts.app')
+@if(Module::has('Core') && Module::isEnabled('Core'))
+  @extends('core::layouts.app')
 @else
-  @extends('menumanagement::layouts.app')
+  @extends('logmanagement::layouts.app')
 @endif
 
 @use('Modules\LogManagement\Constants\Permissions')
 
-@section('page-title', 'User Log')
+@section('title', 'User Log')
 
 @use("Jenssegers\Agent\Agent")
 @php
@@ -19,9 +19,7 @@ $browser = $agent->platform() . " - " . $agent->browser();
   <div class="card-header text-end">
     <div class="float-start me-auto">
       <a href="{{ route('logmanagement.authlog.index') }}" class="btn btn-secondary">
-        <svg class="icon">
-          <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-arrow-thick-left') }}"></use>
-        </svg>
+        <i class="fas fa-arrow-left"></i>
       </a>
     </div>
     <h5 class="card-title">{{$auth_log->authenticatable->name}}</h5>

@@ -1,12 +1,12 @@
-@if(Module::has('ViewManager') && Module::isEnabled('ViewManager'))
-  @extends('viewmanager::layouts.app')
+@if(Module::has('Core') && Module::isEnabled('Core'))
+  @extends('core::layouts.app')
 @else
-  @extends('menumanagement::layouts.app')
+  @extends('logmanagement::layouts.app')
 @endif
 
 @use('Modules\LogManagement\Constants\Permissions')
 
-@section('page-title', 'User Authentication Log')
+@section('title', 'User Authentication Log')
 
 @section('content')
 <div class="card">
@@ -51,9 +51,7 @@
               <nobr>
                 @can(Permissions::VIEW_AUTHLOG)
                 <a href="{{ route('logmanagement.authlog.show', ['auth_log' => $log['id']]) }}" class="btn btn-outline-primary" title="View">
-                  <svg class="icon">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-zoom') }}"></use>
-                  </svg>
+                  <i class="fas fa-fw fa-eye"></i>
                 </a>
                 @endcan
               </nobr>
