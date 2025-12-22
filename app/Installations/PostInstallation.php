@@ -16,6 +16,10 @@ class PostInstallation
 			$result = $this->insertTraits();
 			logger()->info($result["message"]);
 
+			Artisan::call("vendor:publish", [
+				"--tag" => "log-viewer-assets",
+				"--force" => true,
+			]);
 			Artisan::call("migrate", ["--force" => true]);
 		} catch (\Exception $e) {
 			logger()->error(

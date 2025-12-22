@@ -27,7 +27,7 @@ class LogMenuProvider extends BaseMenuProvider
 	{
 		return [
 			$this->item([
-				"tìtle" => "Log Management",
+				"title" => "Log Management",
 				"icon" => "fas fa-bug",
 				"type" => "dropdown",
 				"order" => 20,
