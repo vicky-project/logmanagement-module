@@ -26,7 +26,7 @@ class LogMenuProvider extends BaseMenuProvider
 	public function getMenus(): array
 	{
 		return [
-			$thi->item([
+			$this->item([
 				"tìtle" => "Log Management",
 				"icon" => "fas fa-bug",
 				"type" => "dropdown",
