@@ -3,6 +3,7 @@ namespace Modules\LogManagement\Installations;
 
 use Nwidart\Modules\Facades\Module;
 use Illuminate\Support\Facades\Artisan;
+use Modules\Core\Services\Generators\TraitInserter;
 
 class PostInstallation
 {
@@ -12,6 +13,9 @@ class PostInstallation
 			$mdoule = Module::find($moduleName);
 			$module->enable();
 
+			$result = $this->insertTraits();
+			logger()->info($result["message"]);
+
 			Artisan::call("migrate", ["--force" => true]);
 		} catch (\Exception $e) {
 			logger()->error(
@@ -20,5 +24,10 @@ class PostInstallation
 
 			throw $e;
 		}
+	}
+
+	private function insertTraits()
+	{
+		return TraitInserter::insertTrait("Modules\LogManagement\Traits\UserLog");
 	}
 }

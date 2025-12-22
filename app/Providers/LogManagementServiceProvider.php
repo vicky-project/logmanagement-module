@@ -27,8 +27,6 @@ class LogManagementServiceProvider extends ServiceProvider
 		$this->registerConfig();
 		$this->registerViews();
 		$this->loadMigrationsFrom(module_path($this->name, "database/migrations"));
-
-		$this->registerPermissions();
 	}
 
 	/**
@@ -184,19 +182,5 @@ class LogManagementServiceProvider extends ServiceProvider
 		}
 
 		return $paths;
-	}
-
-	protected function registerPermissions()
-	{
-		$permissions = config($this->nameLower . "permissions", []);
-
-		if (class_exists(\Spatie\Permission\Models\Permission::class)) {
-			foreach ($permissions as $permission) {
-				\Spatie\Permission\Models\Permission::firstOrCreate([
-					"name" => $permission,
-					"guard_name" => "web",
-				]);
-			}
-		}
 	}
 }

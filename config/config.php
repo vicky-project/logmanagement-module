@@ -3,8 +3,6 @@
 return [
 	"name" => "LogManagement",
 
-	"permissions" => ["logs.view", "logs.manage", "logs.delete"],
-
 	"log_retention_days" => 30,
 
 	"auth_log" => [
