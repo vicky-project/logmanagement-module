@@ -35,7 +35,7 @@ class LogMenuProvider extends BaseMenuProvider
 					$this->item([
 						"title" => "Activity Log",
 						"icon" => "fas fa-user-clock",
-						"route" => "'logmanagement.activitylog",
+						"route" => "logmanagement.activitylog",
 						"order" => 1,
 						"'permission" => Permissions::VIEW_ACTIVITYLOG,
 					]),
