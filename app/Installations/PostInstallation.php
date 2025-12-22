@@ -10,7 +10,7 @@ class PostInstallation
 	public function handle(string $moduleName)
 	{
 		try {
-			$mdoule = Module::find($moduleName);
+			$module = Module::find($moduleName);
 			$module->enable();
 
 			$result = $this->insertTraits();
