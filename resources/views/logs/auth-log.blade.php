@@ -39,7 +39,7 @@
             </td>
             <td>{{$log["user_agent"]}}</td>
             <td>
-              <span class="badge">
+              <span class="badge @if($log['login_successful']) badge-success @else badge-danger @endif">
                 @if($log["login_successful"])
                 Yes
                 @else

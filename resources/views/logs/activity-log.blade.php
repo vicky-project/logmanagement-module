@@ -136,7 +136,7 @@
 </div>
 @endsection
 
-@section("scripts")
+@push("scripts")
 <script>
   window.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.btn-check').forEach(
@@ -152,4 +152,4 @@
     );
   });
 </script>
-@endsection
+@endpush
