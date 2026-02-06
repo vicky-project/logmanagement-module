@@ -70,7 +70,7 @@
           </div>
           <div class="row pt-2 border-top border-info">
             <button type="submit" class="btn btn-success btn-block">
-              <i class="fas fa-fw fa-filter"></i>
+              <i class="bi bi-funnel"></i>
               Apply Filters
             </button>
           </div>

@@ -51,7 +51,7 @@
               <nobr>
                 @can(Permissions::VIEW_AUTHLOG)
                 <a href="{{ route('logmanagement.authlog.show', ['auth_log' => $log['id']]) }}" class="btn btn-outline-primary" title="View">
-                  <i class="fas fa-fw fa-eye"></i>
+                  <i class="bi bi-eye"></i>
                 </a>
                 @endcan
               </nobr>

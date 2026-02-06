@@ -19,7 +19,7 @@ $browser = $agent->platform() . " - " . $agent->browser();
   <div class="card-header text-end">
     <div class="float-start me-auto">
       <a href="{{ route('logmanagement.authlog.index') }}" class="btn btn-secondary">
-        <i class="fas fa-arrow-left"></i>
+        <i class="bi bi-arrow-left"></i>
       </a>
     </div>
     <h5 class="card-title">{{$auth_log->authenticatable->name}}</h5>
