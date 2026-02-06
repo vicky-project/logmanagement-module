@@ -9,7 +9,7 @@ class LogMenuProvider extends BaseMenuProvider
 	protected array $config = [
 		"group" => "server",
 		"location" => "sidebar",
-		"icon" => "fas fa-server",
+		"icon" => "bi bi-server",
 		"order" => 1,
 		"permission" => null,
 	];
@@ -28,27 +28,27 @@ class LogMenuProvider extends BaseMenuProvider
 		return [
 			$this->item([
 				"title" => "Log Management",
-				"icon" => "fas fa-bug",
+				"icon" => "bi bi-bug",
 				"type" => "dropdown",
 				"order" => 20,
 				"children" => [
 					$this->item([
 						"title" => "Activity Log",
-						"icon" => "fas fa-user-clock",
+						"icon" => "bi bi-person-lines-fill",
 						"route" => "logmanagement.activitylog",
 						"order" => 1,
 						"'permission" => Permissions::VIEW_ACTIVITYLOG,
 					]),
 					$this->item([
 						"title" => "Auth Log",
-						"icon" => "fas fa-user-lock",
+						"icon" => "bi bi-person-check",
 						"route" => "logmanagement.authlog.index",
 						"order" => 2,
 						"permission" => Permissions::VIEW_AUTHLOG,
 					]),
 					$this->item([
 						"title" => "App Log",
-						"icon" => "fas fa-font",
+						"icon" => "bi bi-app",
 						"route" => "log-viewer.index",
 						"order" => 3,
 						"permission" => Permissions::VIEW_APPLOG,
