@@ -3,13 +3,13 @@
     <div class="d-flex justify-content-between align-items-center">
       @if($isTrusted)
         <span>
-          <i class="bi bi-shield-check text-success me-2"></i>
+          <i class="bi bi-shield-check text-success me-2 fs-2"></i>
           This Device is trusted.
         </span>
         <button type="button" class="btn btn-danger" onclick="trustToggle();">Untrust this device</button>
       @else
         <span>
-          <i class="bi bi-shield-exclamation text-danger me-2"></i>
+          <i class="bi bi-shield-exclamation text-danger me-2 fs-2"></i>
           This device is untrust.
         </span>
         <button type="button" class="btn btn-success" onclick="trustToggle();">Trust this device</button>
@@ -20,6 +20,10 @@
 
 <script>
   async function trustToggle() {
+    @if(!$isTrusted)
+    if(!confirm('Are you sure to untrust this device ?')) return;
+    @endif
+    
     const showAlertExist = typeof window.showAlert === 'function';
     
     try {
