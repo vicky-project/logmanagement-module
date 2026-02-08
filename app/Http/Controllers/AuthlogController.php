@@ -75,14 +75,22 @@ class AuthlogController extends Controller
 		try {
 			$deviceId = $request->device_id;
 			$user = \Auth::user();
-			if ($user->isDeviceTrusted($deviceId)) {
+			$cacheKey = "device_user_" . $user->id . "_trusted_" . md5($deviceId);
+
+			$isTrusted = false;
+			if (cache()->has($cacheKey)) {
+				$isTrusted = cache()->get($cacheKey);
+			} else {
+				$isTrusted = $user->isDeviceTrusted($deviceId);
+			}
+
+			if ($isTrusted) {
 				$user->untrustDevice($deviceId);
 				$message = "Success untrust device";
 			} else {
 				$user->trustDevice($deviceId);
 				$message = "Success trust device";
 			}
-			$cacheKey = "device_user_" . $user->id . "_trusted_" . md5($deviceId);
 
 			cache()->forget($cacheKey);
 
