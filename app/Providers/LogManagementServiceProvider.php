@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+use Rappasoft\LaravelAuthenticationLog\Helpers\DeviceFingerprint;
 
 class LogManagementServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,14 @@ class LogManagementServiceProvider extends ServiceProvider
 		$this->registerConfig();
 		$this->registerViews();
 		$this->loadMigrationsFrom(module_path($this->name, "database/migrations"));
+
+		$hookConfig = $this->nameLower . ".auth_log.hooks";
+		if (
+			config($hookConfig . ".enabled") &&
+			class_exists($service = config($hookConfig . ".service"))
+		) {
+			$this->registerHooks($service);
+		}
 	}
 
 	/**
@@ -35,6 +44,30 @@ class LogManagementServiceProvider extends ServiceProvider
 	public function register(): void
 	{
 		$this->app->register(RouteServiceProvider::class);
+	}
+
+	private function registerHooks($hookService): void
+	{
+		$hookService::add(
+			config($this->nameLower . "auth_log.hooks.name"),
+			function ($data) {
+				$deviceId = DeviceFingerprint::generate(request());
+				$user = \Auth::user();
+				$cacheKey = "device_user_" . $user->id . "_trusted_" . md5($deviceId);
+				$isTrusted = cache()->remember(
+					$cacheKey,
+					now()->addHours(),
+					fn() => $user->isDeviceTrusted($deviceId)
+				);
+
+				return view("logmanagement::hooks.devices", [
+					"isTrusted" => $isTrusted,
+					"user" => $user,
+					"device" => $deviceId,
+				])->render();
+			},
+			10
+		);
 	}
 
 	/**

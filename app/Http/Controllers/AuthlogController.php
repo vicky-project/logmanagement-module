@@ -63,6 +63,38 @@ class AuthlogController extends Controller
 		return view("logmanagement::logs.show-authlog", compact("auth_log"));
 	}
 
+	public function trustedDeviceToggle(Request $request)
+	{
+		$request->validate([
+			"device_id" =>
+				"required|string|exists:" .
+				config("authentication-log.table_name") .
+				",device_id",
+		]);
+
+		try {
+			$deviceId = $request->device_id;
+			$user = \Auth::user();
+			if ($user->isDeviceTrusted($deviceId)) {
+				$user->untrustDevice($deviceId);
+				$message = "Success untrust device";
+			} else {
+				$user->trustDevice($deviceId);
+				$message = "Success trust device";
+			}
+
+			return response()->json(["success" => true, "message" => $message]);
+		} catch (\Exception $e) {
+			return response()->json(
+				[
+					"success" => false,
+					"message" => $e->getMessage(),
+				],
+				500
+			);
+		}
+	}
+
 	/**
 	 * Show the form for editing the specified resource.
 	 */
