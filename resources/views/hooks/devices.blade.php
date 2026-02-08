@@ -21,6 +21,7 @@
 <script>
   async function trustToggle() {
     const showAlertExist = typeof window.showAlert === 'function';
+    
     try {
       const response = await fetch("{{ secure_url(config('app.url'))}}/log/authlog/trusted-device", {
         method: 'POST',
@@ -49,8 +50,7 @@
         if(showAlertExist) {
           showAlert('Error', data.message, 'danger');
         } else {
-          alert(data
-          message)
+          alert(data.message)
         }
       }
     } catch(error) {
@@ -58,7 +58,7 @@
       if(showAlertExist) {
         showAlert('Error', error.message || 'Failed to do this operation.', 'danger');
       } else {
-        alert(error.message)
+        alert(error.message);
       }
     }
   }
