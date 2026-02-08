@@ -24,7 +24,7 @@
   </div>
 </div>
 <!-- Ringkasan Statistik -->
-<div class="row mb-4 pt-3 mt-4 border-top border-primary">
+<div class="row mb-4 pt-2 mt-3 border-top border-primary">
   <div class="col-md-6">
     <div class="summary-box">
       <h6 class="fw-bold text-primary mb-2"><i class="bi bi-info-circle me-2"></i>Ringkasan Aktivitas</h6>
@@ -151,7 +151,7 @@
   </div>
 </div>
                         
-<div class="last-updated mb-2">
+<div class="last-updated mb-3">
   <i class="bi bi-clock me-1"></i> Data diperbarui secara real-time dari sistem log management
 </div>
                 
