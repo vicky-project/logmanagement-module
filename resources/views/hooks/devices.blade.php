@@ -26,7 +26,7 @@
 
 <script>
   async function trustToggle() {
-    @if(!$isTrusted)
+    @if($isTrusted)
     if(!confirm('Are you sure to untrust this device ?')) return;
     @endif
     
