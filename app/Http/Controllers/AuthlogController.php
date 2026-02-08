@@ -82,6 +82,9 @@ class AuthlogController extends Controller
 				$user->trustDevice($deviceId);
 				$message = "Success trust device";
 			}
+			$cacheKey = "device_user_" . $user->id . "_trusted_" . md5($deviceId);
+
+			cache()->forget($cacheKey);
 
 			return response()->json(["success" => true, "message" => $message]);
 		} catch (\Exception $e) {
