@@ -64,6 +64,7 @@ class LogManagementServiceProvider extends ServiceProvider
 					"isTrusted" => $isTrusted,
 					"user" => $user,
 					"device" => $deviceId,
+					"stats" => $user->getLoginStats(),
 				])->render();
 			},
 			10

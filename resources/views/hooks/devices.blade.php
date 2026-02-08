@@ -23,6 +23,11 @@
     </div>
   </div>
 </div>
+<div class="row mt-2">
+  <div class="col-12">
+    {{ dd($stats) }}
+  </div>
+</div>
 
 <script>
   async function trustToggle() {
