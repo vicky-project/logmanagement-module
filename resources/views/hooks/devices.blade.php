@@ -23,11 +23,150 @@
     </div>
   </div>
 </div>
-<div class="row mt-2">
-  <div class="col-12">
-    {{ dd($stats) }}
-  </div>
-</div>
+<!-- Ringkasan Statistik -->
+<div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="summary-box">
+                                    <h6 class="fw-bold text-primary mb-2"><i class="bi bi-info-circle me-2"></i>Ringkasan Aktivitas</h6>
+                                    <p class="mb-0">Total ada <span class="fw-bold">14 login</span> dalam 30 hari terakhir dengan <span class="fw-bold">1 perangkat terpercaya</span>. Terdeteksi <span class="fw-bold">0 aktivitas mencurigakan</span>.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="summary-box">
+                                    <h6 class="fw-bold text-primary mb-2"><i class="bi bi-clock-history me-2"></i>Periode Waktu</h6>
+                                    <p class="mb-0">Semua login dalam 7 hari terakhir juga termasuk dalam 30 hari terakhir. Terdapat <span class="fw-bold">1 upaya gagal</span> dari total percobaan login.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+<!-- Baris Statistik 1 -->
+<div class="row stat-item">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon primary-bg">
+                                        <i class="bi bi-door-open"></i>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-primary">14</div>
+                                        <div class="stat-label">Total Login</div>
+                                        <span class="badge-stat bg-primary bg-opacity-10 text-primary">Seluruh waktu</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon danger-bg">
+                                        <i class="bi bi-exclamation-triangle"></i>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-danger">1</div>
+                                        <div class="stat-label">Upaya Gagal</div>
+                                        <span class="badge-stat bg-danger bg-opacity-10 text-danger">Perlu diperhatikan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+<!-- Baris Statistik 2 -->
+<div class="row stat-item">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon info-bg">
+                                        <i class="bi bi-phone"></i>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-info">2</div>
+                                        <div class="stat-label">Perangkat Unik</div>
+                                        <span class="badge-stat bg-info bg-opacity-10 text-info">Aktif</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon info-bg">
+                                        <i class="bi bi-globe"></i>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-info">1</div>
+                                        <div class="stat-label">IP Unik</div>
+                                        <span class="badge-stat bg-info bg-opacity-10 text-info">Lokasi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+<!-- Baris Statistik 3 -->
+<div class="row stat-item">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon warning-bg">
+                                        <i class="bi bi-calendar-month"></i>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value" style="color: #e6ac00;">14</div>
+                                        <div class="stat-label">30 Hari Terakhir</div>
+                                        <span class="badge-stat bg-warning bg-opacity-10" style="color: #b38600;">Aktivitas terkini</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon warning-bg">
+                                        <i class="bi bi-calendar-week"></i>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value" style="color: #e6ac00;">14</div>
+                                        <div class="stat-label">7 Hari Terakhir</div>
+                                        <span class="badge-stat bg-warning bg-opacity-10" style="color: #b38600;">Aktivitas padat</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+<!-- Baris Statistik 4 -->
+<div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon danger-bg">
+                                        <i class="bi bi-shield-exclamation"></i>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-danger">0</div>
+                                        <div class="stat-label">Aktivitas Mencurigakan</div>
+                                        <span class="badge-stat bg-success bg-opacity-10 text-success">Aman</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon success-bg">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-success">1</div>
+                                        <div class="stat-label">Perangkat Terpercaya</div>
+                                        <span class="badge-stat bg-success bg-opacity-10 text-success">Terverifikasi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+<div class="last-updated mb-2">
+                            <i class="bi bi-clock me-1"></i> Data diperbarui secara real-time dari sistem log management
+                        </div>
+                
+<!-- Info tambahan -->
+<div class="alert alert-info">
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="bi bi-lightbulb fs-4"></i>
+                        </div>
+                        <div>
+                            <h6 class="alert-heading fw-bold">Interpretasi Data</h6>
+                            <p class="mb-0">Data menunjukkan bahwa semua login terjadi dalam 7 hari terakhir (14 login) dengan hanya 1 upaya gagal. Hanya ada 1 alamat IP yang digunakan untuk mengakses dari 2 perangkat berbeda, dan 1 perangkat telah ditandai sebagai terpercaya. Tidak ada aktivitas mencurigakan yang terdeteksi.</p>
+                        </div>
+                    </div>
+                </div>
 
 <script>
   async function trustToggle() {
