@@ -3,21 +3,21 @@
     <div class="d-flex justify-content-between align-items-center">
       @if($isTrusted)
         <span>
-          <i class="bi bi-shield-check text-success me-2 fs-2"></i>
+          <i class="bi bi-shield-check text-success me-1 fs-2"></i>
           This Device is trusted.
         </span>
         <button type="button" class="btn btn-danger" onclick="trustToggle();">
-          <i class="bi bi-x-lg me-2"></i>
-          Untrust this device
+          <i class="bi bi-x-lg me-1"></i>
+          Untrust
         </button>
       @else
         <span>
-          <i class="bi bi-shield-exclamation text-danger me-2 fs-2"></i>
+          <i class="bi bi-shield-exclamation text-danger me-1 fs-2"></i>
           This device is untrust.
         </span>
         <button type="button" class="btn btn-success" onclick="trustToggle();">
-          <i class="bi bi-check2-all me-2"></i>
-          Trust this device
+          <i class="bi bi-check2-all me-1"></i>
+          Trust
         </button>
       @endif
     </div>
