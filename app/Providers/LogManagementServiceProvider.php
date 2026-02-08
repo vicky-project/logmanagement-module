@@ -49,7 +49,7 @@ class LogManagementServiceProvider extends ServiceProvider
 	private function registerHooks($hookService): void
 	{
 		$hookService::add(
-			config($this->nameLower . "auth_log.hooks.name"),
+			config($this->nameLower . ".auth_log.hooks.name"),
 			function ($data) {
 				$deviceId = DeviceFingerprint::generate(request());
 				$user = \Auth::user();
