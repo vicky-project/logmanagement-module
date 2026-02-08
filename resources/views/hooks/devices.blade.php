@@ -6,13 +6,19 @@
           <i class="bi bi-shield-check text-success me-2 fs-2"></i>
           This Device is trusted.
         </span>
-        <button type="button" class="btn btn-danger" onclick="trustToggle();">Untrust this device</button>
+        <button type="button" class="btn btn-danger" onclick="trustToggle();">
+          <i class="bi bi-x-lg me-2"></i>
+          Untrust this device
+        </button>
       @else
         <span>
           <i class="bi bi-shield-exclamation text-danger me-2 fs-2"></i>
           This device is untrust.
         </span>
-        <button type="button" class="btn btn-success" onclick="trustToggle();">Trust this device</button>
+        <button type="button" class="btn btn-success" onclick="trustToggle();">
+          <i class="bi bi-check2-all me-2"></i>
+          Trust this device
+        </button>
       @endif
     </div>
   </div>
