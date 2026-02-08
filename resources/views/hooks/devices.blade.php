@@ -4,25 +4,26 @@
       @if($isTrusted)
         <span>
           <i class="bi bi-shield-check text-success me-1 fs-2"></i>
-          This Device is trusted.
+          Perangkat terverifikasi.
         </span>
         <button type="button" class="btn btn-danger" onclick="trustToggle();">
           <i class="bi bi-x-lg me-1"></i>
-          Untrust
+          Batalkan
         </button>
       @else
         <span>
           <i class="bi bi-shield-exclamation text-danger me-1 fs-2"></i>
-          This device is untrust.
+          Perangkat tidak terverifikasi.
         </span>
         <button type="button" class="btn btn-success" onclick="trustToggle();">
           <i class="bi bi-check2-all me-1"></i>
-          Trust
+          Verifikasi
         </button>
       @endif
     </div>
   </div>
 </div>
+
 <!-- Ringkasan Statistik -->
 <div class="row mb-4 pt-2 mt-3 border-top border-primary">
   <div class="col-md-6">
